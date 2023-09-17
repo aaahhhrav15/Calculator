@@ -1,18 +1,20 @@
 let input=document.getElementById("input");
 let buttons=document.querySelectorAll("button")
 let string="";
-let ev;
-input.addEventListener("keyup", (press)=>{
-    if(key.press=="shift")
+let aarav=document.querySelector("body");
+aarav.addEventListener("keypress", (press)=>{
+    console.log(press.key);
+    if(press.key=="Enter")
     {
-        ev="true";
+        console.log("here too");
+        document.getElementById("equal").click();
     }
 })
 buttons.forEach((button)=>{
     button.addEventListener('click',(e)=>{
         let value=e.target.innerHTML;
         
-        if(value=="=" || ev=="true")
+        if(value=="=")
         {
             input.value=Function("return "+ string)();
             string=input.value;
